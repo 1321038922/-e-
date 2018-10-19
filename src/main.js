@@ -6,6 +6,7 @@ import router from './router'
 import Mint from 'mint-ui';
 import buttomNav from "./components/buttomNav/buttomNav.vue";
 import Header from './components/header/header.vue';
+import store from './store'
 
 import $axios from './utils'
 
@@ -23,5 +24,6 @@ new Vue({
   el: '#app',
   router,
   components: { App },
+  store,
   template: '<App/>'
 })

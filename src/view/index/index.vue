@@ -4,12 +4,12 @@
             <div class="logo fll">
                 <img src="../../../static/imgs/logo.png" alt="">
             </div>
-                <router-link to="/login" class="login flr">登录</router-link>
+                <!-- <router-link v-if="!this.$store.state.userinfo.username" to="/login" class="login flr">登录</router-link> -->
         </div>
         <div class="swiper">
             <mt-swipe :auto="4000" class="swiper-item">
                 <mt-swipe-item v-for="item in rows" :key="item.id">
-                    <router-link to="/">
+                    <router-link :to="{path:'messageDetail', query: {newsId:item.url}}">
                         <img :src="item.imgUrl" alt="">
                     </router-link>
                     <span class="desc">{{item.title}}</span>
@@ -44,7 +44,7 @@
                         </div>
                         <p>党建一点通</p>
                     </router-link>               
-                    <router-link to="/" class="item">
+                    <router-link to="/interaction" class="item">
                         <div>
                             <img src="../../../static/imgs/icon_06@2x.png" alt="">
                         </div>
@@ -96,7 +96,7 @@ export default {
   methods:{
       getData() {
       this.$axios.get(`carousel/carouselList.do?type=0`).then(res => {
-
+          console.log(res)
         if (res.code == 1) {
             this.rows = res.rows
 

@@ -11,17 +11,17 @@
                 <img src="../../../static/imgs/icon1.png" alt="">
                 <div>政治学习</div>
             </router-link>
-            <router-link to="/" class="item">
+            <router-link :to=" this.$store.state.isLogin != 1? '/' :'/thinkReport' "  class="item">
                 <img src="../../../static/imgs/icon2.png" alt="">
                 <div>思想汇报</div>
             </router-link>
-            <router-link to="/" class="item">
+            <router-link :to=" this.$store.state.isLogin != 1? '/' :'/expreience' " class="item">
                 <img src="../../../static/imgs/icon3.png" alt="">
                 <div>心得总结</div>
             </router-link>
         </div>
         <div class="item-wrapper2">
-             <router-link to="/" class="item">
+             <router-link to="/appraise" class="item">
                 <img src="../../../static/imgs/icon4.png" alt="">
                 <div>民主评议</div>
             </router-link>

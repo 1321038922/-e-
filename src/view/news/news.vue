@@ -58,29 +58,29 @@ export default {
     }
   },
   created() {
-    let rs = this.$route.name
-    console.log(rs)
-    switch (rs) {
-      case 'news':
-        this.type = 0;
-        break;
-      case 'oneClick':
-        this.type = 3 ;
-        console.log(this.type)
-        break
-      case 'study':
-        this.type = 6 ;
-        break
-      case 'institutional':
-        this.type = 4 ;
-        break;  
-      case 'specialEvent':
-        this.type = 1 ;
-        break;  
-      case 'politicalstudy':
-        this.type = 8 ;
-        break;  
-    }
+    // let rs = this.$route.name
+    // switch (rs) {
+    //   case 'news':
+    //     this.type = 0;
+    //     break;
+    //   case 'oneClick':
+    //     this.type = 3 ;
+    //     console.log(this.type)
+    //     break
+    //   case 'study':
+    //     this.type = 6 ;
+    //     break
+    //   case 'institutional':
+    //     this.type = 4 ;
+    //     break;  
+    //   case 'specialEvent':
+    //     this.type = 1 ;
+    //     break;  
+    //   case 'politicalstudy':
+    //     this.type = 8 ;
+    //     break;  
+    // }
+    this.type = this.$route.meta.type
     this.getData();
   }
 };

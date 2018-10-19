@@ -8,12 +8,19 @@ const components = {
   index:() => import('@/view/index/index'),
   login:() => import('@/view/login/login'),
   message:() => import('@/view/index/message'),
-  user:() => import('@/view/index/user'),
+  user:() => import('@/view/user/user'),
+  userinfo:() => import('@/view/user/userinfo'),
+  userintegral:() => import('@/view/user/userintegral'),
+  integralDetail:() => import('@/view/user/integralDetail'),
   news:() => import('@/view/news/news'),
   photos:() => import('@/view/photos/photos'),
   newsDetail:() => import('@/view/news/newsDetail'),
   todayNews:() => import('@/view/todayNews/todayNews'),
   userservice:() => import('@/view/userservice/userservice'),
+  thinkReport:() => import('@/view/userservice/thinkReport'),
+  expreience:() => import('@/view/userservice/expreience'),
+  appraise:() => import('@/view/userservice/appraise'),
+  appraise:() => import('@/view/userservice/appraise'),
   map:() => import('@/view/userservice/map'),
 }
 
@@ -62,6 +69,7 @@ export default new Router({
       name:'news',
       meta:{
         title: '信工新闻眼',
+        type:0
       },
       component: components.news,
     },
@@ -90,7 +98,8 @@ export default new Router({
       path:'/oneClick',
       name:'oneClick',
       meta:{
-        title: '党建一点通'
+        title: '党建一点通',
+        type:3
       },
       component: components.news,
     },
@@ -98,7 +107,8 @@ export default new Router({
       path:'/study',
       name:'study',
       meta:{
-        title: '随时随地学'
+        title: '随时随地学',
+        type:6
       },
       component: components.news,
     },
@@ -114,7 +124,8 @@ export default new Router({
       path:'/institutional',
       name:'institutional',
       meta:{
-        title: '制度建设'
+        title: '制度建设',
+        type:4
       },
       component: components.news,
     },
@@ -127,7 +138,17 @@ export default new Router({
       path:'/specialEvent',
       name:'specialEvent',
       meta: {
-        title:"特色活动"
+        title:"特色活动",
+        type:1
+      },
+      component: components.news,
+    },
+    {
+      path:'/interaction',
+      name:'interaction',
+      meta: {
+        title:"党员亮身份",
+        type:5
       },
       component: components.news,
     },
@@ -135,7 +156,8 @@ export default new Router({
       path:'/politicalstudy',
       name:'politicalstudy',
       meta: {
-        title:'政治学习'
+        title:'政治学习',
+        type:8
       },
       component: components.news,
     },
@@ -146,6 +168,54 @@ export default new Router({
         title:'流动党员找组织'
       },
       component: components.map,
+    },
+    {
+      path:'/thinkReport',
+      name:'thinkReport',
+      meta: {
+        title:'思想汇报'
+      },
+      component: components.thinkReport,
+    },
+    {
+      path:'/expreience',
+      name:'expreience',
+      meta: {
+        title:'心得总结'
+      },
+      component: components.expreience,
+    },
+    {
+      path:'/appraise',
+      name:'appraise',
+      meta: {
+        title:'民主评议'
+      },
+      component: components.appraise,
+    },
+    {
+      path:'/userinfo',
+      name:'userinfo',
+      meta: {
+        title:'个人信息'
+      },
+      component: components.userinfo,
+    },
+    {
+      path:'/userintegral',
+      name:'userintegral',
+      meta: {
+        title:'个人量化积分'
+      },
+      component: components.userintegral,
+    },
+    {
+      path:'/integralDetail',
+      name:'integralDetail',
+      meta: {
+        title:'积分明细'
+      },
+      component: components.integralDetail,
     },
   ]
 })

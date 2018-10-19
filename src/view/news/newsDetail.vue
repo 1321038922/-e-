@@ -45,6 +45,9 @@ export default {
               case 1:
                 this.title = "特色活动";
                 break;
+              case 5:
+                this.title = "党员亮身份";
+                break;
             }
           }
         });
