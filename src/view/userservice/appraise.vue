@@ -3,7 +3,7 @@
         <Header></Header>
         <div class="item p8">
              <button @click="$router.back()">个人总结</button>
-             <button @click="$router.back()">民主评议</button>
+             <button @click="$router.push('/appraiseItem')">民主评议</button>
         </div>
     </div>
 </template>

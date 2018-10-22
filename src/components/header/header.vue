@@ -6,6 +6,7 @@
                 <button class="icon-lift fll" @click="$router.back()" v-if="isShow">
                     <img src="../../assets/last.png" alt="">
                 </button>
+                
             </header>
         </div>
     </div>  

@@ -12,7 +12,7 @@ const instance = axios.create ( {
     // beforeSend: function(request) {
     //     request.setRequestHeader("Authorization", token);
     // },
-    // headers:{'Authorization': 'this.$store.state.token'}
+    headers:{'token' : store.state.token}
 })
 
 const qs = require('querystring')
@@ -29,19 +29,10 @@ instance.interceptors.request.use((config) => {
 const xhr = {
     get(url,data,config){
         return new Promise((resolve,reject)=>{
-            const token = store.state.token
-            let computedConfig = {
-                ...config
-            }
-            if(token){
-                computedConfig = {
-                    headers: {
-                        'token': token
-                    }
-                }
-            }
-            console.log(computedConfig)
-            instance.get(url,{params:data,...computedConfig}).then(res=>{
+
+            // console.log(computedConfig)
+            instance.get(url,{params:data}).then(res=>{
+                // console.log(res)
                 resolve(res.data)
             }).catch(err=>{
                 reject(err)

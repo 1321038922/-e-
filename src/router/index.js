@@ -22,6 +22,9 @@ const components = {
   appraise:() => import('@/view/userservice/appraise'),
   appraise:() => import('@/view/userservice/appraise'),
   map:() => import('@/view/userservice/map'),
+  payfees:() => import('@/view/user/payfees'),
+  appraiseItem:() => import('@/view/userservice/appraiseItem'),
+  appraiseDetail:() => import('@/view/userservice/appraiseDetail'),
 }
 
 export default new Router({
@@ -217,5 +220,29 @@ export default new Router({
       },
       component: components.integralDetail,
     },
-  ]
+    {
+      path:'/payfees',
+      name:'payfees',
+      meta: {
+        title:'交纳党费'
+      },
+      component: components.payfees,
+    },
+      {
+        path:'/appraiseDetail',
+        name:'appraiseDetail',
+        meta: {
+          title:'民主评议'
+        },
+        component: components.appraiseDetail,
+      },
+      {
+        path:'/appraiseItem',
+        name:'appraiseItem',
+        meta: {
+          title:'民主评议'
+        },
+        component: components.appraiseItem,
+      },
+    ]
 })
