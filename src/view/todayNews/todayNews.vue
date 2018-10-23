@@ -14,7 +14,7 @@ export default {
   },
   methods: {
     getData() {
-      this.$axios.get(`/proxy/proxy.do?url=http:%2F%2Fcpc.people.com.cn%2FGB%2F64162%2F64165%2F70486%2F70505%2Findex.html`).then(res => {
+      this.$axios.get(`/proxy/proxy.do?url=http://cpc.people.com.cn/GB/64162/64165/70486/70509/index.html`).then(res => {
         console.log(res)
           let str = res.split("<!--content-->")[1]
           this.message = str.split("<!--p1 end-->")[0]

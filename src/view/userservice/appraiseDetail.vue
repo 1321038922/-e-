@@ -4,6 +4,7 @@
         <div class="lookcontent"
         v-infinite-scroll="downUpLoad"
         infinite-scroll-disabled="isOffDown"
+        infinite-scroll-distance="200"
        >
             <div class="item" v-for="item in person" :key=item.id>
                 <div class="left">

@@ -158,7 +158,8 @@ export default {
         console.log(res);
         if (res.code == 1) {
         //   this.$store.commit("CHANGE_USERINFO", null);
-            this.$router.push(`/userinfo`);
+            this.getData()
+            this.$store.commit("CHANGE_USERINFO", this.userinfo);
         }
       });
     },
@@ -170,6 +171,7 @@ export default {
       reader.onload = function(evt) {
         let base64Data = evt.target.result;
         _this.imgurl = base64Data;
+        console.log(base64Data)
         const reg = /data:image\/png;base64,/;
         let sendData = base64Data.replace(reg, "");
         _this.$axios

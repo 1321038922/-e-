@@ -123,7 +123,7 @@ export default {
 .button {
     margin-top: 1.5rem;
   button {
-      margin: 0 auto;
+    margin: 0 auto;
     display: block;
     font-size: 14px;
     height: 0.82rem;

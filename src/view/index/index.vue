@@ -30,7 +30,7 @@
                         </div>
                         <p>掌上组织生活</p>
                     </router-link>
-                    <router-link to="/" class="item">
+                    <router-link to="/interaction" class="item">
                         <div>
                             <img src="../../../static/imgs/icon_05@2x.png" alt="">
                         </div>
@@ -44,7 +44,7 @@
                         </div>
                         <p>党建一点通</p>
                     </router-link>               
-                    <router-link to="/interaction" class="item">
+                    <router-link to="/identity" class="item">
                         <div>
                             <img src="../../../static/imgs/icon_06@2x.png" alt="">
                         </div>

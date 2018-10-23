@@ -12,6 +12,7 @@ const components = {
   userinfo:() => import('@/view/user/userinfo'),
   userintegral:() => import('@/view/user/userintegral'),
   integralDetail:() => import('@/view/user/integralDetail'),
+  interaction:() => import('@/view/user/interaction'),
   news:() => import('@/view/news/news'),
   photos:() => import('@/view/photos/photos'),
   newsDetail:() => import('@/view/news/newsDetail'),
@@ -23,6 +24,7 @@ const components = {
   appraise:() => import('@/view/userservice/appraise'),
   map:() => import('@/view/userservice/map'),
   payfees:() => import('@/view/user/payfees'),
+  reply:() => import('@/view/user/reply'),
   appraiseItem:() => import('@/view/userservice/appraiseItem'),
   appraiseDetail:() => import('@/view/userservice/appraiseDetail'),
 }
@@ -147,8 +149,8 @@ export default new Router({
       component: components.news,
     },
     {
-      path:'/interaction',
-      name:'interaction',
+      path:'/identity',
+      name:'identity',
       meta: {
         title:"党员亮身份",
         type:5
@@ -224,7 +226,7 @@ export default new Router({
       path:'/payfees',
       name:'payfees',
       meta: {
-        title:'交纳党费'
+        title:'缴纳党费'
       },
       component: components.payfees,
     },
@@ -243,6 +245,22 @@ export default new Router({
           title:'民主评议'
         },
         component: components.appraiseItem,
+      },
+      {
+        path:'/interaction',
+        name:'interaction',
+        meta: {
+          title:'党员云互动'
+        },
+        component: components.interaction,
+      },
+      {
+        path:'/reply',
+        name:'reply',
+        meta: {
+          title:'党员云互动'
+        },
+        component: components.reply,
       },
     ]
 })

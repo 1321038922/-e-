@@ -4,6 +4,7 @@
         <div class="news-option"
            v-infinite-scroll="getMore"
             infinite-scroll-disabled="loading"
+            infinite-scroll-distance="200"
         >
             <div class="news-item" v-for="item in rows" :key="item.id">
                 <router-link :to="{path:'newsDetail', query:{newsId:item.newsId}}" class="item-wrap">
@@ -34,9 +35,9 @@ export default {
       rows: [],
       type:'',
       page:1,
-      loading: false,
+      loading: true,
       isShow:false,
-      isLoading:false,
+      isLoading:true,
     };
   },
   methods: {
@@ -49,7 +50,8 @@ export default {
       this.$axios.get(`/news/newsList.do?page=${this.page}&rows=10&type=${this.type}`).then(res => {
         this.rows = [...this.rows,...res.rows]
         this.loading =false
-        if(res.rows.length == 0){
+        this.isLoading = false
+        if(this.rows.length == res.total){
           this.loading =true
           this.isShow = true
           this.isLoading = false

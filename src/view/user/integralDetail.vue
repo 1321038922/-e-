@@ -3,7 +3,8 @@
         <Header></Header>
         <div class="wrapper"
             v-infinite-scroll="getMore"
-            infinite-scroll-disabled="loading">
+            infinite-scroll-disabled="loading"
+            infinite-scroll-distance="200">
             <div class="list clearfix" v-for="item in rows" :key="item.id">
                 <div class="fll">
                     <div>{{item.typeName}}</div>
@@ -34,11 +35,11 @@ export default {
       this.getData();
     },
     getData() {
-
+      this.isLoading = true;
       this.$axios
         .get(`integral/integralList.do?page=${this.page}&rows=10`)
         .then(res => {
-          console.log(res)
+          console.log(res);
           this.rows = [...this.rows, ...res.rows];
           this.loading = false;
           if (res.rows.length == 0) {
